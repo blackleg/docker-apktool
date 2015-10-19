@@ -25,6 +25,8 @@ RUN chmod +x /usr/local/bin/apktool.jar /usr/local/bin/apktool
 # Create workspace
 RUN mkdir /app
 
+VOLUME /app
+
 ##
 
 WORKDIR /app
