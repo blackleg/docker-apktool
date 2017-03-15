@@ -10,7 +10,7 @@ RUN wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/li
 
 # Download APKTool JAR
 RUN wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.2.jar
-RUN mv apktool_2.0.2.jar apktool.jar
+RUN mv apktool_2.2.2.jar apktool.jar
 
 # Move bins to /usr/local/bin
 RUN mv apktool.jar apktool /usr/local/bin
