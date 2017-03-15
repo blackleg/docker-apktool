@@ -2,18 +2,14 @@ FROM java:7
 
 MAINTAINER Paul "Rohja" Lesellier <rohja@rohja.com>
 
-# Install WGET
-RUN apt-get update
-RUN apt-get install -y wget
+# Install WGET and install 32b libs
+RUN apt-get update && apt-get install -y wget gcc-multilib && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Download APKTool script
 RUN wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool
 
-# Install 32b libs
-RUN apt-get install -y gcc-multilib
-
 # Download APKTool JAR
-RUN wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.0.2.jar
+RUN wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.2.2.jar
 RUN mv apktool_2.0.2.jar apktool.jar
 
 # Move bins to /usr/local/bin
